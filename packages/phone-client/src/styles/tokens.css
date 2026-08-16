@@ -1,0 +1,21 @@
+:root {
+  --bg: #fbf9f5;
+  --panel: #ffffff;
+  --ink: #2b2440;
+  --dim: #8b83a3;
+  --purple: #7c3aed;
+  --purple-light: #c4b5fd;
+  --pink: #db2777;
+  --line: #ece7f5;
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body, #root { height: 100%; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+button { cursor: pointer; font-family: inherit; }
+input { font-family: inherit; }
