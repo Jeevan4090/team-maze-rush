@@ -42,11 +42,11 @@ export default function AdminPage({ gameState, getSocket }: Props) {
         <div className="card" style={{ padding: 16 }}>
           <h3 style={{ fontSize: 12, color: "var(--dim)", letterSpacing: 1 }}>GAME CONTROL</h3>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <button className="btn btn-primary" onClick={() => emit("admin:startGame")}>▶ Start</button>
-            <button className="btn btn-neutral" onClick={() => emit("admin:pauseGame")}>⏸ Pause</button>
-            <button className="btn btn-primary" onClick={() => emit("admin:resumeGame")}>⏵ Resume</button>
-            <button className="btn btn-danger" onClick={() => emit("admin:endGame")}>⏹ End</button>
-            <button className="btn btn-neutral" onClick={() => emit("admin:resetGame")}>↺ Reset</button>
+            <button className="btn btn-primary" id="startBtn" onClick={() => emit("admin:startGame")}>▶ Start</button>
+            <button className="btn btn-neutral" id="pauseBtn" onClick={() => emit("admin:pauseGame")}>⏸ Pause</button>
+            <button className="btn btn-primary" id="resumeBtn" onClick={() => emit("admin:resumeGame")}>⏵ Resume</button>
+            <button className="btn btn-danger" id="endBtn" onClick={() => emit("admin:endGame")}>⏹ End</button>
+            <button className="btn btn-neutral" id="resetBtn" onClick={() => emit("admin:resetGame")}>↺ Reset</button>
           </div>
           <p style={{ fontSize: 11, color: "var(--dim)", marginTop: 8 }}>Phase: <b>{gameState.phase}</b></p>
         </div>
@@ -54,11 +54,11 @@ export default function AdminPage({ gameState, getSocket }: Props) {
         <div className="card" style={{ padding: 16 }}>
           <h3 style={{ fontSize: 12, color: "var(--dim)", letterSpacing: 1 }}>TRIGGER LIVE EVENT</h3>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-            <button className="btn btn-primary" onClick={() => emit("admin:triggerEvent", { type: "gate_open" })}>Gate Open</button>
-            <button className="btn btn-primary" onClick={() => emit("admin:triggerEvent", { type: "gate_close" })}>Gate Close</button>
-            <button className="btn btn-primary" onClick={() => emit("admin:triggerEvent", { type: "energy_surge" })}>Energy Surge</button>
-            <button className="btn btn-primary" onClick={() => emit("admin:triggerEvent", { type: "monster_surge" })}>Monster Surge</button>
-            <button className="btn btn-primary" onClick={() => emit("admin:triggerEvent", { type: "obstacle_shift" })}>Obstacle Shift</button>
+            <button className="btn btn-primary" id="gateOpenBtn" onClick={() => emit("admin:triggerEvent", { type: "gate_open" })}>Gate Open</button>
+            <button className="btn btn-primary" id="gateCloseBtn" onClick={() => emit("admin:triggerEvent", { type: "gate_close" })}>Gate Close</button>
+            <button className="btn btn-primary" id="energySurgeBtn" onClick={() => emit("admin:triggerEvent", { type: "energy_surge" })}>Energy Surge</button>
+            <button className="btn btn-primary" id="monsterSurgeBtn" onClick={() => emit("admin:triggerEvent", { type: "monster_surge" })}>Monster Surge</button>
+            <button className="btn btn-primary" id="obstacleShiftBtn" onClick={() => emit("admin:triggerEvent", { type: "obstacle_shift" })}>Obstacle Shift</button>
           </div>
           <p style={{ fontSize: 11, color: "var(--dim)", marginTop: 8 }}>Applies to a random active team (per-team targeting is a future add).</p>
         </div>
